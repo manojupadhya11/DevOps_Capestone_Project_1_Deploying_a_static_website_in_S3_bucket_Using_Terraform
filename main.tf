@@ -33,3 +33,26 @@ resource "aws_s3_bucket_acl" "example" {
   acl    = "public-read"
 }
 
+resource "aws_s3_object" "index" {
+    bucket = aws_s3_bucket.ManojResto.id
+    key ="index.html"
+    source = "index.html"
+    acl = "public-read"
+    content_type = "text/html"
+}
+
+resource "aws_s3_object" "error" {
+    bucket = aws_s3_bucket.ManojResto.id
+    key ="error.html"
+    source = "error.html"
+    acl = "public-read"
+    content_type = "text/html"
+}
+
+resource "aws_s3_object" "profile" {
+    bucket = aws_s3_bucket.ManojResto.id
+    key ="profile.png"
+    source = "profile.png"
+    acl = "public-read"
+}
+
